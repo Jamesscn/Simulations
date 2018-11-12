@@ -1,0 +1,77 @@
+body, div, canvas, span, p, a, li, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: Segoe UI, sans-serif;
+}
+
+p, a, li {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 76, 130);
+}
+
+li {
+    list-style: none;
+}
+
+canvas {
+    box-shadow: 1px 1px 5px black;
+}
+
+#header {
+    background-color: rgb(36, 36, 36);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#contents {
+    padding: 20px;
+}
+
+#simdiv {
+    text-align: center;
+}
+
+#information {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#settings {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.itemspan {
+    display: block;
+    padding: 10px;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    text-align: center;
+}
+
+.itemspan p {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.itemspan button {
+    margin-left: 2px;
+    margin-right: 2px;
+}
