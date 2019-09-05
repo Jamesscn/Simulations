@@ -7,6 +7,7 @@ var canvas = canvasElement.getContext("2d")
 var width = canvasElement.width
 var height = canvasElement.height
 var nVal = document.getElementById("nval")
+var resetBtn = document.getElementById("reset")
 var imageData = null
 var mouseX = 0
 var mouseY = 0
@@ -34,15 +35,12 @@ window.onload = function () {
         mouseX = Math.floor(event.clientX - rect.left)
         mouseY = Math.floor(event.clientY - rect.top)
     })
-    var pixels = []
-    for (var i = 0; i < width * height * 4; i += 4) {
-        pixels.push(0)
-        pixels.push(0)
-        pixels.push(0)
-        pixels.push(255)
-    }
-    imageData = new ImageData(new Uint8ClampedArray(pixels), width, height)
-    canvas.putImageData(imageData, 0, 0)
+    resetBtn.addEventListener("click", function() {
+        clearCanvas()
+        started = false
+        nVal.textContent = "-"
+    })
+    clearCanvas()
     setInterval(function () {
         if(loadedModel != null) {
             pixels = new Array(784)
@@ -77,6 +75,18 @@ window.onload = function () {
         }
     }, 1000)
     draw()
+}
+
+function clearCanvas() {
+    var pixels = []
+    for (var i = 0; i < width * height * 4; i += 4) {
+        pixels.push(0)
+        pixels.push(0)
+        pixels.push(0)
+        pixels.push(255)
+    }
+    imageData = new ImageData(new Uint8ClampedArray(pixels), width, height)
+    canvas.putImageData(imageData, 0, 0)
 }
 
 function draw() {
