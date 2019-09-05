@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../index.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+        <title>Number Recognition</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Number Recognition</h1>
+            <p>Write a number in the box below</p>
+        </div><br>
+        <div id="simdiv">
+            <canvas width="420" height="420" id="simulator"></canvas>
+        </div>
+        <div id="information">
+            <p>Your number is: <span id="nval">0</span></p>
+        </div>
+        <script src="./mnist.js"></script>
+    </body>
+</html>

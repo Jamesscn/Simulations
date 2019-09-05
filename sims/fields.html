@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../index.css">
+        <title>Electric Fields</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Electric Fields</h1><br>
+            <p>This simulation is not accurate when considering multiple charges in motion because it does not consider magnetic forces</p>
+        </div><br>
+        <div id="simdiv">
+            <canvas width="1200" height="400" id="simulator"></canvas>
+        </div>
+        <div id="information">
+            <p>Electric Field: <span id="ef">0</span> N/C</p>
+            <p>Electric Potential: <span id="ep">0</span> V</p>
+        </div>
+        <div id="settings">
+            <h2>Charges</h2><br>
+            X (0, 1200):
+            <input type="text" id="chargex"></input>
+            Y (0, 400):
+            <input type="text" id="chargey"></input>
+            Charge:
+            <input type="text" id="chargeval"></input>
+            <button id="chargebtn">Add Charge</button>
+            <br><br>
+            <h2>Voltmeters</h2><br>
+            Terminal 1 (X, Y):
+            <input type="text" id="voltxa"></input>
+            <input type="text" id="voltya"></input>
+            Terminal 2 (X, Y):
+            <input type="text" id="voltxb"></input>
+            <input type="text" id="voltyb"></input>
+            <button id="meterbutton">Add Voltmeter</button>
+            <br><br>
+        </div>
+        <div id="chargeDiv">
+        
+        </div>
+        <script src="./fieldsim.js"></script>
+        <script src="./charges.js"></script>
+    </body>
+</html>
