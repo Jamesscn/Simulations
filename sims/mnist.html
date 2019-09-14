@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../index.css">
+        <link href="https://fonts.googleapis.com/css?family=Hind:600|Titillium+Web&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
         <title>Number Recognition</title>
     </head>
@@ -10,12 +11,14 @@
             <h1>Number Recognition</h1>
             <p>Write a single digit in the box below</p>
         </div><br>
-        <div id="simdiv">
-            <canvas width="420" height="420" id="simulator"></canvas>
-        </div>
-        <div id="information">
-            <button id="reset">Reset</button>
-            <p>Your number is: <span id="nval">-</span></p>
+        <div id="contents">
+            <div id="simdiv">
+                <canvas width="420" height="420" id="simulator"></canvas>
+            </div>
+            <div id="information">
+                <button id="reset">Reset</button>
+                <p class="inline">Your number is: <span id="nval">-</span></p>
+            </div>
         </div>
         <script src="./mnist.js"></script>
     </body>

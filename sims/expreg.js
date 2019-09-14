@@ -20,7 +20,7 @@ var prevB = 0
 var momentum = 1
 
 function fixedUpdate() {
-    var gradient = getGradient(a, b, 0.00000006, 0.000000035)
+    var gradient = getGradient(a, b, 0.000000075, 0.000000032)
     a += gradient.a + prevA
     b += gradient.b + prevB
     prevA = (gradient.a + prevA) * momentum
