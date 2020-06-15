@@ -3,11 +3,11 @@
 	<head>
 		<link rel="stylesheet" href="../index.css">
         <link href="https://fonts.googleapis.com/css?family=Hind:600|Titillium+Web&display=swap" rel="stylesheet">
-		<title>Projection of a 3D cube</title>
+		<title>Projection of a 3D Cube</title>
 	</head>
 	<body>
 		<div id="header">
-			<h1>Projection of a 3D cube</h1>
+			<h1>Projection of a 3D Cube</h1>
 			<p>Simulate the projection of a 3D cube onto a 2D screen</p>
 		</div><br>
 		<div id="simdiv">
@@ -26,6 +26,12 @@
 			<input type="range" min="-100" max="100" value="0" id="slidera">
 			<input type="range" min="-100" max="100" value="0" id="sliderb">
 			<input type="range" min="-100" max="100" value="0" id="sliderg">
+			<p>Posición camara: </p>
+			<input type="range" min="-100" max="100" value="0" id="slidercx">
+			<input type="range" min="-100" max="100" value="0" id="slidercy">
+			<input type="range" min="-100" max="100" value="0" id="slidercz">
+			<p>Zoom: </p>
+			<input type="range" min="1" max="50" value="10" id="sliderzoom">
 		</div>	
 		<script src="cube.js"></script>
 	</body>

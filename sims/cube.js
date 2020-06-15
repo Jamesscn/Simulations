@@ -7,6 +7,10 @@ var sliderPZ = document.getElementById("sliderpz")
 var sliderA = document.getElementById("slidera")
 var sliderB = document.getElementById("sliderb")
 var sliderG = document.getElementById("sliderg")
+var sliderCX = document.getElementById("slidercx")
+var sliderCY = document.getElementById("slidercy")
+var sliderCZ = document.getElementById("slidercz")
+var sliderZoom = document.getElementById("sliderzoom")
 var pantalla = document.getElementById("simulator")
 var canvas = pantalla.getContext("2d")
 var width = pantalla.width
@@ -39,7 +43,8 @@ var camara = {
 		x: 0,
 		y: -1,
 		z: 0
-	}
+	},
+	zoom: 1
 }
 
 function crearVector(inicio, fin) {
@@ -102,7 +107,11 @@ function draw() {
 	cuboide.centro.x = sliderPX.value / 10
 	cuboide.centro.y = sliderPY.value / 10
 	cuboide.centro.z = sliderPZ.value / 10
+	camara.centro.x = sliderCX.value / 10
+	camara.centro.y = sliderCY.value / 10
+	camara.centro.z = sliderCZ.value / 10
 	cuboide.angulos = [sliderA.value / 100, sliderB.value / 100, sliderG.value / 100]
+	camara.zoom = sliderZoom.value / 10
 	canvas.fillStyle = "black"
 	canvas.fillRect(0, 0, width, height)
 	var puntos = []
@@ -171,19 +180,18 @@ function draw() {
 		for(var j = 0; j < 4; j++) {
 			var puntoActual = puntos[indicesCara[i][j] - 1]
 			var vectorCamaraPunto = crearVector(camara.centro, puntoActual)
-			var vectorMira = normalizar(crearVector(camara.centro, camara.mira))
-			var distanciaLinea = 1 / productoPunto(vectorCamaraPunto, vectorMira)
+			var vectorMira = escalar(crearVector(camara.centro, camara.mira), camara.zoom)
+			var distanciaLinea = productoPunto(vectorMira, vectorMira) / productoPunto(vectorCamaraPunto, vectorMira)
 			var puntoPlano = escalar(vectorCamaraPunto, distanciaLinea)
-			var vectorMiraPunto = crearVector(camara.mira, puntoPlano)
-			var vectorDeltaX = productoCruz(vectorMiraPunto, vectorMira)
-			var deltaX = productoPunto(vectorDeltaX, {
+			var vectorPantallaX = normalizar(productoCruz(vectorMira, {
 				x: 0,
 				y: 0,
-				z: -1
-			})
+				z: 1
+			}))
+			var vectorPantallaY = normalizar(productoCruz(vectorMira, vectorPantallaX))
 			var puntoPantalla = {
-				x: deltaX,
-				y: camara.mira.z - puntoPlano.z,
+				x: -productoPunto(puntoPlano, vectorPantallaX),
+				y: productoPunto(puntoPlano, vectorPantallaY),
 				z: 0
 			}
 			var puntoFinal = sumar(centroPantalla, escalar(puntoPantalla, 100))
