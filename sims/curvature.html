@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../index.css">
+        <link href="https://fonts.googleapis.com/css?family=Hind:600|Titillium+Web&display=swap" rel="stylesheet">
+        <title>Osculating Circle of a Cardioid</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Osculating Circle of a Cardioid</h1>
+        </div><br>
+        <div id="simdiv">
+            <canvas width="1200" height="500" id="simulator"></canvas>
+		</div><br>
+		<div id="settings">
+			<p>x(t) = 2cos(t)(1-cos(t))</p>
+			<p>y(t) = 2sin(t)(1-cos(t))</p>
+			<p>Time varies from 0 to 2 pi</p>
+			<p>Time: <span id="time"></span></p>
+			<p>Curvature: <span id="curvature"></span></p>
+			<p>Radius of curvature: <span id="radius"></span></p>
+			<input type="range" min="1" max="999" value="500" id="sliderTime">
+		</div>
+        <script src="./curvature.js"></script>
+    </body>
+</html>
