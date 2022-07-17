@@ -15,9 +15,9 @@ template = """\
 		<title>James' Simulations</title>
 	</head>
 	<body class="bg-success text-light">
-		<div class="text-center mx-4 my-5">
+		<div class="text-center mx-5 my-5">
 			<h1><strong>James' Simulations</strong></h1>
-			<p>I find some things best explained with simulations, therefore I made this website to share some of my simulations with the world. I hope you enjoy!</p>
+			<p>I find some things best explained with simulations. Some of these simulations are intented to help explain a concept, and others are just me messing around with different tools. Nevertheless, I thought it would be nice to share this with the world, so I hope you enjoy!</p>
 		</div>
 
 		<div class="bg-dark text-light">

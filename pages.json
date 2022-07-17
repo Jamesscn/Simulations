@@ -1,5 +1,12 @@
 [
     {
+        "name": "Discrete Control Plant Simulator",
+        "description": "Simulate a discrete control system plant and PID controller in real time.",
+        "link": "https://jamesscn.github.io/ClassProjects/discrete-control-simulator/",
+        "icon": "wave-square",
+        "color": "red"
+    },
+    {
         "name": "Complex Roots of a Control System",
         "description": "Observe how changing the location of complex roots of a system modifies its output.",
         "link": "./sims/controlroot.html",
@@ -54,5 +61,19 @@
         "link": "./sims/curvature.html",
         "icon": "bezier-curve",
         "color": "crimson"
+    },
+    {
+        "name": "AC Voltage Transportation",
+        "description": "A simulator that allows you to view AC voltage and power transported between wires.",
+        "link": "https://jamesscn.github.io/ClassProjects/carnita-asada/",
+        "icon": "bolt",
+        "color": "brown"
+    },
+    {
+        "name": "Genetic Algorithm Flappy Bird",
+        "description": "Observe how neural networks are randomly generated in an attempt to make them play flappy bird.",
+        "link": "https://jamesscn.github.io/genetic-flappy-bird/",
+        "icon": "dove",
+        "color": "cornflowerblue"
     }
 ]

@@ -1,3 +1,5 @@
+var canvasHolder = document.getElementById("simdiv")
+var settingsHolder = document.getElementById("settings")
 var canvasElement = document.getElementById("simulator")
 var canvas = canvasElement.getContext("2d")
 var width = canvasElement.width
@@ -10,7 +12,11 @@ var root = {
 	omega: 1
 }
 
-window.onload = function () {
+window.onload = function() {
+	canvasElement.width = Math.trunc(canvasHolder.clientWidth)
+	canvasElement.height = Math.trunc(settingsHolder.clientHeight)
+	width = canvasElement.width
+	height = canvasElement.height
     draw()
 }
 
