@@ -33,6 +33,8 @@ function fixedUpdate() {
  * ---------
  */
 
+var canvasHolder = document.getElementById("simdiv")
+var settingsHolder = document.getElementById("settings")
 var canvasElement = document.getElementById("simulator")
 var canvas = canvasElement.getContext("2d")
 var width = canvasElement.width
@@ -45,6 +47,10 @@ var pointRadius = 2
 var points = []
 
 window.onload = function () {
+    canvasElement.width = Math.trunc(canvasHolder.clientWidth)
+	canvasElement.height = Math.trunc(settingsHolder.clientHeight)
+	width = canvasElement.width
+	height = canvasElement.height
     setInterval(fixedUpdate, 1000 / 60)
     initialize()
     draw()

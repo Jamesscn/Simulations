@@ -18,10 +18,12 @@ function simDraw() {
     potentialElement.textContent = getPotential(mouseX, mouseY).toFixed(2)
 }
 
+var chargeDiv = document.getElementById("chargeDiv")
 var chargeButton = document.getElementById("chargebtn")
 var chargeX = document.getElementById("chargex")
 var chargeY = document.getElementById("chargey")
 var chargeVal = document.getElementById("chargeval")
+var voltmeterDiv = document.getElementById("voltmeterDiv")
 var voltmeterButton = document.getElementById("meterbutton")
 var voltxa = document.getElementById("voltxa")
 var voltya = document.getElementById("voltya")
@@ -43,6 +45,14 @@ chargeButton.addEventListener("click", function () {
     var description = document.createElement("p")
     var statbutton = document.createElement("button")
     var delbutton = document.createElement("button")
+    chargeInfo.classList.add("my-1")
+    chargepos.classList.add("my-1")
+    statbutton.classList.add("btn")
+    statbutton.classList.add("btn-primary")
+    statbutton.classList.add("mb-1")
+    delbutton.classList.add("btn")
+    delbutton.classList.add("btn-primary")
+    delbutton.classList.add("mb-1")
     description.textContent = "Q: " + chargeVal.value + "x10^-6 C"
     statbutton.textContent = "Static"
     statbutton.addEventListener("click", function () {
@@ -77,10 +87,15 @@ voltmeterButton.addEventListener("click", function () {
     var description = document.createElement("p")
     var voltage = document.createElement("p")
     var delbutton = document.createElement("button")
-    description.textContent = "X1: " + voltxa.value + ", Y1: " + voltya.value + ", X2: " + voltxb.value + ", Y2: " + voltyb.value
+    description.classList.add("my-1")
+    voltage.classList.add("my-1")
+    delbutton.classList.add("btn")
+    delbutton.classList.add("btn-primary")
+    delbutton.classList.add("mb-1")
+    description.textContent = "X+: " + voltxa.value + ", Y+: " + voltya.value + ", X-: " + voltxb.value + ", Y-: " + voltyb.value
     delbutton.textContent = "Remove"
     delbutton.addEventListener("click", function () {
-        chargeDiv.removeChild(voltmeterInfo)
+        voltmeterDiv.removeChild(voltmeterInfo)
         voltmeterVals.splice(voltmeters.indexOf(v), 1)
         voltmeters.splice(voltmeters.indexOf(v), 1)
     })
@@ -88,7 +103,7 @@ voltmeterButton.addEventListener("click", function () {
     voltmeterInfo.appendChild(voltage)
     voltmeterInfo.appendChild(delbutton)
     voltmeterInfo.classList.add("itemspan")
-    chargeDiv.appendChild(voltmeterInfo)
+    voltmeterDiv.appendChild(voltmeterInfo)
     voltmeterVals.push(voltage)
     voltxa.value = ""
     voltya.value = ""

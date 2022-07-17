@@ -35,6 +35,10 @@ function getField(x, y) {
     }
 }
 
+var canvasHolder = document.getElementById("simdiv")
+var settingsHolder = document.getElementById("settings")
+var widthIndicator = document.getElementById("maxWidth")
+var heightIndicator = document.getElementById("maxHeight")
 var information = document.getElementById("information")
 var canvasElement = document.getElementById("simulator")
 var canvas = canvasElement.getContext("2d")
@@ -48,7 +52,15 @@ var mouseX = 0
 var mouseY = 0
 var mouseField = null
 
-window.onload = function () {
+window.onload = function() {
+    canvasElement.width = Math.trunc(canvasHolder.clientWidth)
+	canvasElement.height = Math.trunc(settingsHolder.clientHeight)
+    width = canvasElement.width
+	height = canvasElement.height
+    widthIndicator.textContent = width
+    if(heightIndicator != null) {
+        heightIndicator.textContent = height
+    }
     var rect = canvasElement.getBoundingClientRect()
     canvasElement.addEventListener("mousemove", function (event) {
         mouseX = event.clientX - rect.left + window.pageXOffset

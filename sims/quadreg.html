@@ -1,21 +1,27 @@
 <!doctype html>
-<html>
+<html class="h-100">
     <head>
-        <link rel="stylesheet" href="../index.css">
-        <link href="https://fonts.googleapis.com/css?family=Hind:600|Titillium+Web&display=swap" rel="stylesheet">
-        <title>Quadratic Regression</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="James Scoon's Personal Website!">
+        <meta name="author" content="James Scoon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap-reboot.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="website/index.css" rel="stylesheet">
+        <title>Quadratic Regression with Gradient Descent</title>
     </head>
-    <body>
-        <div id="header">
-            <h1>Quadratic Regression</h1>
-        </div><br>
-        <div id="simdiv">
-            <canvas width="1200" height="400" id="simulator"></canvas>
-        </div>
-        <div id="information">
-            <p>A: <span id="aval">0</span></p>
-            <p>B: <span id="bval">0</span></p>
-            <p>C: <span id="cval">0</span></p>
+    <body class="bg-secondary text-light text-center d-flex flex-column h-100">
+        <h1 class="bg-success px-3 py-3 mb-0"><strong>Quadratic Regression with Gradient Descent</strong></h1>
+        <div class="d-flex flex-row h-100">
+            <div class="col-2 px-3 py-3 bg-dark h-100" id="settings">
+                <h3>Settings</h3>
+                <p class="my-1">A: <span id="aval">0</span></p>
+                <p class="my-1">B: <span id="bval">0</span></p>
+                <p class="my-1">C: <span id="cval">0</span></p>
+            </div>
+            <div class="col my-auto w-100 bg-secondary" id="simdiv">
+                <canvas id="simulator"></canvas>
+            </div>
         </div>
         <script src="./quadreg.js"></script>
     </body>

@@ -17,6 +17,10 @@ plateButton.addEventListener("click", function () {
     var plateInfo = document.createElement("span")
     var description = document.createElement("p")
     var delbutton = document.createElement("button")
+    description.classList.add("my-1")
+    delbutton.classList.add("btn")
+    delbutton.classList.add("btn-primary")
+    delbutton.classList.add("mb-1")
     description.textContent = "X: " + plateX.value + ", Density: " + plateVal.value + "x10^-11 C/m"
     delbutton.textContent = "Remove"
     delbutton.addEventListener("click", function () {
